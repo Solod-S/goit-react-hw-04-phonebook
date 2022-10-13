@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 import shortid from 'shortid';
 import { Formik } from 'formik';
-import * as yup from 'yup';
+import schema from './schema';
 import { ToastContainer, Flip } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import {
@@ -14,21 +14,6 @@ import {
   ButtonForContactsForm,
   ErrorForContactsForm,
 } from './ContactForm.styled';
-const phoneRegExp =
-  /\+?\d{1,4}?[-.\s]?\(?\d{1,3}?\)?[-.\s]?\d{1,4}[-.\s]?\d{1,4}[-.\s]?\d{1,9}/;
-let schema = yup.object().shape({
-  name: yup
-    .string()
-    .min(3, 'That doesnt look like your name')
-    .typeError()
-    .required(),
-  number: yup
-    .string()
-    .required(`You need to type a number`)
-    .min(3, 'Too short')
-    .max(15, 'Too long')
-    .matches(phoneRegExp, 'That doesnt look like a phone number'),
-});
 
 function ContactForm({ creatingContact }) {
   const [name] = useState('');

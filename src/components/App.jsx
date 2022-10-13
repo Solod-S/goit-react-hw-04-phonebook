@@ -101,7 +101,11 @@ function App() {
 
 export default App;
 
+//----------------------
+//----------------------
 // state
+//----------------------
+//----------------------
 // class App extends React.Component {
 //   state = {
 //     contacts: contactdata,
