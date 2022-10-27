@@ -18,7 +18,6 @@ import {
 function ContactForm({ creatingContact }) {
   const [name] = useState('');
   const [number] = useState('');
-
   const handleSubmit = (values, actions) => {
     creatingContact(values);
 
@@ -86,8 +85,11 @@ ContactForm.propTypes = {
 };
 export default ContactForm;
 
-//state
-//
+//----------------------
+//----------------------
+// state
+//----------------------
+//----------------------
 // class ContactForm extends React.Component {
 //   state = { name: '', number: '' };
 
